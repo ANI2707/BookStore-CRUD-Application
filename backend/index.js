@@ -1,10 +1,12 @@
 import express from "express";
-import { PORT ,mongoDBURL} from "./config.js";
 import mongoose from "mongoose";
 // import { Book } from "./models/bookModel.js";
 import booksRoute from './routes/booksRoute.js';
 import cors from 'cors';
 const app=express();
+import 'dotenv/config'
+
+console.log(process.env);
 
 //Middle ware for parsing request body
 app.use(express.json());
@@ -34,11 +36,11 @@ app.use('/books',booksRoute);
 
 
 mongoose
-    .connect(mongoDBURL)
+    .connect(process.env.MONGODB_URL)
     .then(()=>{
         console.log('App connected to database');
-        app.listen(PORT,()=>{
-            console.log(`Server is running on port ${PORT}`);
+        app.listen(process.env.PORT || 5555,()=>{
+            console.log(`Server is running on port ${process.env.PORT || 5555}`);
         })
     })
     .catch((error)=>{
