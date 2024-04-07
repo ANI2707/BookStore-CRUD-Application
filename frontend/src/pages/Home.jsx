@@ -18,7 +18,7 @@ const Home = () => {
     setLoading(true);
     //get all books
     axios
-      .get("https://book-store-crud-application-eosin.vercel.app/books")
+      .get("https://bookstore-crud-application.onrender.com/books")
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);

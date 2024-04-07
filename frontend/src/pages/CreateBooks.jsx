@@ -21,7 +21,7 @@ const CreateBooks = () => {
     setLoading(true);
 
     axios
-      .post("https://book-store-crud-application-eosin.vercel.app/books", data)
+      .post("https://bookstore-crud-application.onrender.com/books", data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar('Book Created successfully', { variant: 'success' });        navigate("/");

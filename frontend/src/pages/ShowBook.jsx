@@ -11,7 +11,7 @@ const ShowBook = () => {
   useEffect(()=>{
     setLoading(true);
     axios
-      .get(`https://book-store-crud-application-eosin.vercel.app/books/${id}`)
+      .get(`https://bookstore-crud-application.onrender.com/books/${id}`)
       .then((res)=>{
         setBook(res.data);
         setLoading(false);
